@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="GB2312"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.w3schools.com" targetNamespace="http://www.w3schools.com" elementFormDefault="qualified">
+<xsd:element name="学生注册">
+	
+	<xsd:complexType>
+		<xsd:sequence>
+		<xsd:element name="学生" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+</xsd:element>
+<xsd:element name="学生" >
+	<xsd:complexType>
+		<xsd:sequence>
+		<xsd:element name="姓名"/>
+		<xsd:element name="性别"/>
+		<xsd:element name="年龄"/>
+		</xsd:sequence>
+		<xsd:attribute name="学号" use="required"
+		type="xsd:integer"/>
+	</xsd:complexType>
+</xsd:element>
+<xsd:element name="姓名" type="xsd:string"/>
+<xsd:element name="性别" type="sex"/>
+	<xsd:simpleType name="sex">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="男"/>
+			<xsd:enumeration value="女"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+<xsd:element name="年龄">
+<xsd:simpleType>
+<xsd:restriction base="xsd:integer">
+<xsd:minInclusive value="0"/>
+<xsd:maxInclusive value="120"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+
+</xsd:schema>
